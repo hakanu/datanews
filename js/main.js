@@ -1,4 +1,4 @@
-Stamplay.init('spor');
+Stamplay.init('datanews');
 var posts = new Stamplay.Cobject('post').Collection;
 var user = new Stamplay.User().Model;
 
