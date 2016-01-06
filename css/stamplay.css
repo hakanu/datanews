@@ -18,6 +18,10 @@
 	background-color: #414b82;
 }
 
+.row-green {
+	background-color: #8BC34A;  /* Light green. */
+}
+
 .logo-container{
 	width:18px;
 	padding-right:4px;
