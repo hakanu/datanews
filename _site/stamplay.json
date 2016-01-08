@@ -1,0 +1,10 @@
+{
+  "appId": "datanews",
+  "apiKey": "0426b42ff50ca5e3306ab1287b6ffe6b38880bac8f38d7bf0e0dc3d31c15840b",
+  "public": "./",
+  "ignore": [
+    "stamplay.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

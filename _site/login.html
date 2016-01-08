@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Data News</title>
+  <meta name="description" content="Data news for data enthusiasts and scientists">
+  
+  <link rel="shortcut icon" href="./images/favicon.png">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://datanews.io/login.html">
+  <link rel="alternate" type="application/rss+xml" title="Data News" href="http://datanews.io/feed.xml">
+</head>
+
+
+  <body>
+
+    <div>
+
+</div>
+<header class="site-header">
+
+  <div class="wrapper">
+    <a class="site-title" href="/">
+      <img width="18" height="18" src="./images/favicon.png" class="logo-img"> Data News
+    </a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <!-- <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </div> -->
+      <div class="trigger">
+        <span class="pagetop">
+          <span id="user-info"></span>
+          <span id="logout-btn">
+            <a href="#" id="logout">Log out</a>
+          </span>
+          <span id="login-btn">
+            <a id="login" href="/login.html">Log in</a>
+          </span>
+        </span>
+        <a id="submit-button" href="./submit.html" id="submit-button">Submit</a>
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <form id="loginform" method="post" action="login">
+  <input type="hidden" name="goto" value="news">
+  <table border="0">
+    <tbody>
+      <tr>
+        <td>username:</td>
+        <td>
+          <input type="text" name="acct" size="20" id="username" autocorrect="off" autocapitalize="off"></td>
+      </tr>
+      <tr>
+        <td>password:</td>
+        <td>
+          <input type="password" name="pw" id="password" size="20"></td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <input type="submit" value="login"></form>
+<a id="reset-pw" href="forgot?id=">Forgot your password?</a>
+<br>
+<br> <b>Create Account</b>
+<br>
+<br>
+<form id="signupform" method="post" action="login">
+  <input type="hidden" name="goto" value="news">
+  <input type="hidden" name="creating" value="t">
+  <table border="0">
+    <tbody>
+      <tr>
+        <td>email:</td>
+        <td>
+          <input type="text" name="acct" size="20" autocorrect="off" autocapitalize="off"></td>
+      </tr>
+      <tr>
+        <td>password:</td>
+        <td>
+          <input type="password" name="pw" size="20"></td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <input type="submit" value="create account"></form>
+<script type="text/javascript">(function () {
+      return window.SIG_EXT = {};
+    })()</script>
+<span id="buffer-extension-hover-button" style="display: none;position: absolute;z-index: 8675309;width: 100px;height: 25px;background-image: url(chrome-extension://noojglkidnpfjbincgijbaiedldjfbhh/data/shared/img/buffer-hover-icon@2x.png);background-size: 100px 25px;opacity: 0.9;cursor: pointer;"></span>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper center-text">
+      <div class="footer-col footer-col-3"></div>
+      <div class="footer-col footer-col-3">
+        <form id="search-form">
+          <input class="typeahead" id="post-search" type="text" name="title" value="" placeholder="search by post title" size="25" spellcheck="false">
+        </form>
+      </div>
+      <div class="footer-col footer-col-3"></div>
+    </div>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-3"></div>
+      <div class="footer-col footer-col-3">
+        <p>Data news for data enthusiasts and scientists</p>
+      </div>
+      <div class="footer-col footer-col-3"></div>
+    </div>
+    
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-3"></div>
+      <div class="footer-col footer-col-3 fb-like" data-href="http://facebook.com/datanewsio" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+      <div class="footer-col footer-col-3"></div>
+    </div>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-3"></div>
+      <div class="footer-col footer-col-3">
+        <a href="https://twitter.com/datanewsio" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @datanewsio</a>
+      </div>
+      <div class="footer-col footer-col-3"></div>
+    </div>
+
+    <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+  </div>
+  
+</footer>
+
+    
+    <!-- My js. -->
+<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/bower_components/jquery-Mustache/jquery.mustache.js"></script>
+<script src="/bower_components/mustache.js/mustache.js"></script>
+
+<script src="/bower_components/stamplay-js-sdk/dist/stamplay.min.js"></script>
+<script src="//cdn.jsdelivr.net/typeahead.js/0.10.5/typeahead.jquery.min.js"></script>
+<script src="/bower_components/algoliasearch/dist/algoliasearch.min.js"></script>
+
+<script src="./js/utils.js"></script>
+<script src="./js/main.js"></script>
+
+<!--<script src="./js/posts.js"></script>-->
+<!--<script src="./js/import_old_posts.js"></script>-->
+
+<script src="https://js.pusher.com/2.2/pusher.min.js"></script>
+<!-- /My js. -->
+
+<!-- FB like button -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=188554417917880";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+<!-- /FB like button -->
+
+<!-- Twitter follow button -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+</script>
+<!-- /Twitter follow button -->
+
+<!-- GA -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72083136-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- /GA -->
+  </body>
+
+</html>
