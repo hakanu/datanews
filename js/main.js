@@ -62,7 +62,6 @@ $(document).ready(function () {
   $('#logout-btn').hide();
   $('#submit-button').hide();
 
-  console.log(user.currentUser());
   user.currentUser()
     .then(function () {
       var userId = user.get('_id');
@@ -87,7 +86,7 @@ $(document).ready(function () {
             select: 'points'
           },
           success: function (response) {
-            $('#user-info').html(user.get('email') + '  ' + response.points + ' | ');
+            $('#user-info').html(user.get('email') + ' (' + response.points + ') | ');
           }
         });
 
@@ -134,6 +133,7 @@ $(document).ready(function () {
   /****************************/
   /*    SUBMIT NEW POST       */
   /****************************/
+
   $("#sendnews").submit(function (event) {
     event.preventDefault();
 
@@ -146,9 +146,19 @@ $(document).ready(function () {
     newPost.set('url', url);
     newPost.set('body', description);
 
-    newPost.save().then(function () {
-      window.location.href = "/index.html";
-    });
+
+    user.currentUser()
+      .then(function () {
+        console.log(user);
+        console.log(user.get('_id'));
+        console.log(user.get('email'));
+        var displayName = user.get('displayName');
+        console.log(displayName);
+        newPost.set('author', displayName);
+        newPost.save().then(function () {
+          window.location.href = "/index.html";
+        });
+      });
   });
 
 
@@ -245,6 +255,7 @@ function getPostDetail() {
     var viewData = {
       id : post.get('_id'),
       url : post.get('url'),
+      author : post.get('author'),
       shortUrl : Utils.getHostname(post.get('url')),
       title : post.get('title'),
       dt_create : Utils.formatDate(post.get('dt_create')),
@@ -282,6 +293,7 @@ function getSortedPostList(posts, queryParam) {
         id: post.get('_id'),
         count : count+1,
         url: post.get('url'),
+        author: post.get('author'),
         shortUrl: Utils.getHostname(post.get('url')),
         title: post.get('title'),
         dt_create: Utils.formatDate(post.get('dt_create')),
