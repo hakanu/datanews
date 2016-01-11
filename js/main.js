@@ -86,7 +86,7 @@ $(document).ready(function () {
             select: 'points'
           },
           success: function (response) {
-            $('#user-info').html(user.get('email') + ' (' + response.points + ') | ');
+            $('#user-info').html('<a href="/user.html?id=' + user.get('displayName') + '"">' + user.get('displayName') + ' (' + response.points + ')</a> | ');
           }
         });
 
@@ -145,7 +145,6 @@ $(document).ready(function () {
     newPost.set('title', title);
     newPost.set('url', url);
     newPost.set('body', description);
-
 
     user.currentUser()
       .then(function () {
@@ -288,19 +287,24 @@ function getSortedPostList(posts, queryParam) {
 
     $('#newstable').html('');
     posts.instance.forEach(function (post, count) {
+      var postId = post.get('_id');
+      var postUrl = post.get('url');
+      if (!postUrl) {
+        postUrl = '/item.html?id=' + postId;
+      }
 
       var viewData = {
         id: post.get('_id'),
         count : count+1,
-        url: post.get('url'),
+        url: postUrl,
         author: post.get('author'),
         shortUrl: Utils.getHostname(post.get('url')),
         title: post.get('title'),
         dt_create: Utils.formatDate(post.get('dt_create')),
         commentLength: post.get('actions').comments.length,
         votesLength: post.get('actions').votes.users_upvote.length
-      }
-      viewDataArray.push(viewData)
+      };
+      viewDataArray.push(viewData);
 
     });
     Utils.renderTemplate('list-elem', viewDataArray, '#newstable');
