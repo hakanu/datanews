@@ -213,7 +213,7 @@ $(document).ready(function () {
   /****************************/
   /* ALGOLIA TYPEAHEAD SEARCH */
   /****************************/
-  var algolia = algoliasearch('FG8XCKB0HH', '08fe90cfa20d0faf6eccffc8208974c7');
+  var algolia = algoliasearch('F1SN6P29V1', '754b88b4f6836e0cd5e9cdd1085fb692');
   var index = algolia.initIndex('posts');
   $('#post-search').typeahead({hint: false}, {
     source: index.ttAdapter({hitsPerPage: 3}),
