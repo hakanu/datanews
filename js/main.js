@@ -25,18 +25,48 @@ $(document).ready(function () {
     event.preventDefault();
     var registrationData = {
         email : $("#signupform input[name='acct']").val(),
+        displayName: $("#signupform input[name='username']").val(),
         password: $("#signupform input[name='pw']").val()
     };
 
     console.log('registrationData: ' + registrationData);
     console.log('registrationData: ' + JSON.stringify(registrationData));
+    console.log('registrationData: ' + registrationData['displayName']);
 
-    user.signup(registrationData).then(function(){
-      window.location.href = "/index.html";
-    }).then(function(){
-      // Something went wrong
-      console.log("something went wrong!");
-    })
+    var piiCollection = new Stamplay.Cobject('pii').Collection;
+    piiCollection.equalTo('displayName', registrationData['displayName']).fetch().then(function(){
+      if (piiCollection.instance.length > 0) {
+        console.log('Sorry, that username is not available');
+        window.location.href = "/login.html?m=bad_username";
+      } else {
+        console.log('Username is free');
+        user.signup(registrationData).then(function(){
+          console.log('Saving new pii');
+
+          var newPii = new Stamplay.Cobject('pii').Model;
+          newPii.set('displayName', registrationData['displayName']);
+          console.log(newPii);
+          newPii.save().then(function(){
+            //The SDK saved succesfully the dinner object instance
+            console.log('pii saved succesfully');
+          }, function(err){
+            //Something went wrong, the SDK returns the error
+            console.log('pii failed to be saved');
+          });
+          console.log('Navigating...');
+          
+          //window.location.href = "/index.html";
+        }).then(function(){
+          // Something went wrong
+          console.log("something went wrong!");
+        })
+      }
+    }, function(err){
+        console.log('Error while fetching');
+    });
+
+
+    
   });
 
   $('#logout').on('click', function (e) {
